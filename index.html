@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đánh Giá Chéo - Sườn Bài Kỹ Năng Mềm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tùy chỉnh radio button để dễ bấm trên điện thoại */
+        input[type="radio"] {
+            width: 1.5rem;
+            height: 1.5rem;
+            accent-color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans p-4 md:p-8">
+
+    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-blue-600 text-white p-6 text-center">
+            <h1 class="text-2xl font-bold">PHIẾU ĐÁNH GIÁ CHÉO SƯỜN BÀI</h1>
+            <p class="mt-2 text-blue-100">Dành cho 9 nhóm báo cáo Kỹ năng mềm</p>
+        </div>
+
+        <form id="peerReviewForm" class="p-6 space-y-8">
+            <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Nhóm ĐÁNH GIÁ (Nhóm của bạn)</label>
+                    <select id="evaluator" required class="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">-- Chọn nhóm --</option>
+                        <option value="Nhóm 1">Nhóm 1</option>
+                        <option value="Nhóm 2">Nhóm 2</option>
+                        <option value="Nhóm 3">Nhóm 3</option>
+                        <option value="Nhóm 4">Nhóm 4</option>
+                        <option value="Nhóm 5">Nhóm 5</option>
+                        <option value="Nhóm 6">Nhóm 6</option>
+                        <option value="Nhóm 7">Nhóm 7</option>
+                        <option value="Nhóm 8">Nhóm 8</option>
+                        <option value="Nhóm 9">Nhóm 9</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Nhóm ĐƯỢC ĐÁNH GIÁ</label>
+                    <select id="groupName" required class="w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">-- Chọn nhóm --</option>
+                        <option value="Nhóm 1">Nhóm 1</option>
+                        <option value="Nhóm 2">Nhóm 2</option>
+                        <option value="Nhóm 3">Nhóm 3</option>
+                        <option value="Nhóm 4">Nhóm 4</option>
+                        <option value="Nhóm 5">Nhóm 5</option>
+                        <option value="Nhóm 6">Nhóm 6</option>
+                        <option value="Nhóm 7">Nhóm 7</option>
+                        <option value="Nhóm 8">Nhóm 8</option>
+                        <option value="Nhóm 9">Nhóm 9</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h2 class="text-xl font-bold text-gray-800 border-b pb-2">Tiêu chí chấm điểm</h2>
+
+                <div class="border rounded-lg p-4 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">1. Cấu trúc & Hình thức (3 điểm)</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc1" value="1" required class="mt-1">
+                            <span><b>0-1đ:</b> Sườn bài lộn xộn, thiếu logic, thiếu nhiều phần.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc1" value="2" class="mt-1">
+                            <span><b>2đ:</b> Đủ các phần cơ bản, trình bày tương đối rõ ràng.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc1" value="3" class="mt-1">
+                            <span><b>3đ:</b> Cấu trúc cực kỳ logic, chuyên nghiệp, phân cấp rõ ràng.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="border rounded-lg p-4 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">2. Độ sâu của Lý thuyết (3 điểm)</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc2" value="1" required class="mt-1">
+                            <span><b>0-1đ:</b> Định nghĩa chung chung, không có mô hình cụ thể.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc2" value="2" class="mt-1">
+                            <span><b>2đ:</b> Có lý thuyết cơ bản nhưng chưa phân tích sâu.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc2" value="3" class="mt-1">
+                            <span><b>3đ:</b> Phân tích sâu sắc, đưa ra mô hình cốt lõi dễ hiểu.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="border rounded-lg p-4 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">3. Tính ứng dụng thực tế (3 điểm)</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc3" value="1" required class="mt-1">
+                            <span><b>0-1đ:</b> Chỉ nói lý thuyết suông, thiếu tình huống thực tế.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc3" value="2" class="mt-1">
+                            <span><b>2đ:</b> Có case study nhưng còn rập khuôn, ít liên quan sinh viên.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc3" value="3" class="mt-1">
+                            <span><b>3đ:</b> Case study "đời thường", các bước rèn luyện sát thực tế.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="border rounded-lg p-4 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">4. Phân công nhóm (3 điểm)</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc4" value="1" required class="mt-1">
+                            <span><b>0-1đ:</b> Phân công hời hợt, thời gian chia quá lệch.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc4" value="2" class="mt-1">
+                            <span><b>2đ:</b> Có phân công cho 10 người nhưng chưa thật sự đồng đều.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input type="radio" name="tc4" value="3" class="mt-1">
+                            <span><b>3đ:</b> Phân công cực kỳ chi tiết, công bằng khối lượng & thời gian.</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg border">
+                <label class="block font-bold text-gray-800 mb-2">Nhận xét thêm (Ghi rõ 1 điểm sáng & 1 lỗi nghiêm trọng):</label>
+                <textarea id="comment" rows="3" required class="w-full p-3 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" placeholder="Ví dụ: Cấu trúc tốt nhưng phần chia thời gian cho bạn A và B bị lố 2 phút..."></textarea>
+                
+                <div class="mt-4 flex justify-between items-center bg-yellow-100 p-4 rounded text-yellow-900 font-bold text-lg">
+                    <span>Tổng điểm quy đổi (Hệ 10):</span>
+                    <span id="totalScoreDisplay">0 / 10</span>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded text-lg transition duration-200 flex justify-center items-center">
+                <span>Gửi Đánh Giá</span>
+                <svg id="loadingSpinner" class="hidden animate-spin ml-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </button>
+            <p id="statusMsg" class="text-center font-semibold mt-2 hidden"></p>
+        </form>
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyEP_kko3wt2-XAhmTEQXHoRbUYNRDUOo8CiU9O7_lVTpwxm4mSj047da2O_N2aYs8Bog/exec';
+        
+        const form = document.getElementById('peerReviewForm');
+        const radios = document.querySelectorAll('input[type="radio"]');
+        const scoreDisplay = document.getElementById('totalScoreDisplay');
+        let currentTotalScale10 = 0;
+
+        // Tính điểm tự động
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                let total12 = 0;
+                for(let i=1; i<=4; i++) {
+                    const selected = document.querySelector(`input[name="tc${i}"]:checked`);
+                    if(selected) total12 += parseInt(selected.value);
+                }
+                currentTotalScale10 = (total12 * 10 / 12).toFixed(1);
+                scoreDisplay.textContent = `${currentTotalScale10} / 10`;
+            });
+        });
+
+        // Xử lý Gửi form
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            const evaluator = document.getElementById('evaluator').value;
+            const groupName = document.getElementById('groupName').value;
+            
+            if(evaluator === groupName) {
+                alert("Nhóm đánh giá và Nhóm được đánh giá không được trùng nhau!");
+                return;
+            }
+
+            // Giao diện loading
+            const btn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('loadingSpinner');
+            const statusMsg = document.getElementById('statusMsg');
+            btn.disabled = true;
+            spinner.classList.remove('hidden');
+            statusMsg.classList.add('hidden');
+
+            // Thu thập điểm chi tiết
+            const tc1 = document.querySelector('input[name="tc1"]:checked').value;
+            const tc2 = document.querySelector('input[name="tc2"]:checked').value;
+            const tc3 = document.querySelector('input[name="tc3"]:checked').value;
+            const tc4 = document.querySelector('input[name="tc4"]:checked').value;
+            const comment = document.getElementById('comment').value;
+
+            // Xây dựng JSON phù hợp với CASE 5 của App Script
+            const payload = {
+                action: "save_form_knlvn",
+                role: "Đánh Giá Chéo",
+                evaluator: evaluator,
+                groupName: groupName,
+                week: "Sửa Sườn Bài",
+                headers: [
+                    "Cấu Trúc (3đ)", 
+                    "Lý Thuyết (3đ)", 
+                    "Ứng Dụng (3đ)", 
+                    "Phân Công (3đ)", 
+                    "Tổng Điểm Hệ 10", 
+                    "Nhận Xét"
+                ],
+                scores: [
+                    tc1, 
+                    tc2, 
+                    tc3, 
+                    tc4, 
+                    currentTotalScale10, 
+                    comment
+                ]
+            };
+
+            // Gửi dữ liệu dưới dạng Text để vượt qua kiểm tra CORS của App Script
+            fetch(scriptURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.result === "success") {
+                    statusMsg.textContent = "✅ Đã lưu kết quả thành công!";
+                    statusMsg.className = "text-center font-bold mt-2 text-green-600 block";
+                    form.reset();
+                    scoreDisplay.textContent = "0 / 10";
+                } else {
+                    throw new Error(data.error || "Lỗi không xác định");
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                statusMsg.textContent = "❌ Có lỗi xảy ra: " + error.message;
+                statusMsg.className = "text-center font-bold mt-2 text-red-600 block";
+            })
+            .finally(() => {
+                btn.disabled = false;
+                spinner.classList.add('hidden');
+                // Tắt thông báo sau 5 giây
+                setTimeout(() => { statusMsg.classList.add('hidden'); }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
