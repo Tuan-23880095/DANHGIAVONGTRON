@@ -50,7 +50,7 @@
 
                 <div class="space-y-4">
                     <div class="border rounded p-3 shadow-sm">
-                        <h3 class="font-bold text-md mb-2">1. Cấu trúc & Hình thức (3 điểm)</h3>
+                        <h3 class="font-bold text-md mb-2">1. Cấu trúc & Hình thức (3 điểm - 20%)</h3>
                         <div class="flex flex-col space-y-1">
                             <label class="flex items-center space-x-2"><input type="radio" name="f1_tc1" value="1" required><span><b>1đ:</b> Lộn xộn, thiếu logic, thiếu phần.</span></label>
                             <label class="flex items-center space-x-2"><input type="radio" name="f1_tc1" value="2"><span><b>2đ:</b> Đủ phần cơ bản, tương đối rõ.</span></label>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="border rounded p-3 shadow-sm">
-                        <h3 class="font-bold text-md mb-2">2. Độ sâu của Lý thuyết (3 điểm)</h3>
+                        <h3 class="font-bold text-md mb-2">2. Độ sâu của Lý thuyết (3 điểm-50%)</h3>
                         <div class="flex flex-col space-y-1">
                             <label class="flex items-center space-x-2"><input type="radio" name="f1_tc2" value="1" required><span><b>1đ:</b> Chung chung, không có mô hình.</span></label>
                             <label class="flex items-center space-x-2"><input type="radio" name="f1_tc2" value="2"><span><b>2đ:</b> Có lý thuyết nhưng chưa sâu.</span></label>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="border rounded p-3 shadow-sm">
-                        <h3 class="font-bold text-md mb-2">3. Tính ứng dụng thực tế (3 điểm)</h3>
+                        <h3 class="font-bold text-md mb-2">3. Tính ứng dụng thực tế (3 điểm-20%)</h3>
                         <div class="flex flex-col space-y-1">
                             <label class="flex items-center space-x-2"><input type="radio" name="f1_tc3" value="1" required><span><b>1đ:</b> Lý thuyết suông, thiếu tình huống.</span></label>
                             <label class="flex items-center space-x-2"><input type="radio" name="f1_tc3" value="2"><span><b>2đ:</b> Có case study nhưng rập khuôn.</span></label>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="border rounded p-3 shadow-sm">
-                        <h3 class="font-bold text-md mb-2">4. Phân công nhóm (3 điểm)</h3>
+                        <h3 class="font-bold text-md mb-2">4. Phân công nhóm (3 điểm-10%)</h3>
                         <div class="flex flex-col space-y-1">
                             <label class="flex items-center space-x-2"><input type="radio" name="f1_tc4" value="1" required><span><b>1đ:</b> Phân công hời hợt, quá lệch.</span></label>
                             <label class="flex items-center space-x-2"><input type="radio" name="f1_tc4" value="2"><span><b>2đ:</b> Có chia việc nhưng chưa đồng đều.</span></label>
@@ -187,16 +187,25 @@
             btn.classList.add('active');
         }
 
-        // Tính điểm Form 1 (Sườn bài: scale 12 -> 10)
+        // Tính điểm Form 1 (Tính theo trọng số: TC1 20%, TC2 50%, TC3 20%, TC4 10%)
         let f1_total = 0;
+        // Mảng lưu trọng số tương ứng với 4 tiêu chí (0.2 = 20%, 0.5 = 50%, 0.1 = 10%)
+        const f1_weights = [0.2, 0.5, 0.2, 0.1]; 
+
         document.querySelectorAll('#form1 input[type="radio"]').forEach(radio => {
             radio.addEventListener('change', () => {
-                let sum = 0;
+                let totalWeightedScore = 0;
                 for(let i=1; i<=4; i++) {
                     const checked = document.querySelector(`input[name="f1_tc${i}"]:checked`);
-                    if(checked) sum += parseInt(checked.value);
+                    if(checked) {
+                        const value = parseInt(checked.value); // Điểm chọn (1, 2 hoặc 3)
+                        const maxScore = 3; // Điểm tối đa của mỗi tiêu chí trong HTML
+                        
+                        // Công thức: (Điểm đạt / Điểm max) * Trọng số * 10 (quy đổi hệ 10)
+                        totalWeightedScore += (value / maxScore) * f1_weights[i-1] * 10;
+                    }
                 }
-                f1_total = (sum * 10 / 12).toFixed(1);
+                f1_total = totalWeightedScore.toFixed(1);
                 document.getElementById('f1_scoreDisplay').textContent = `${f1_total} / 10`;
             });
         });
