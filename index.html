@@ -18,11 +18,12 @@
         <div class="bg-blue-600 text-white p-6 text-center">
             <h1 class="text-2xl font-bold uppercase">Hệ Thống Đánh Giá Chéo</h1>
             <p class="mt-2 text-blue-100">Học phần Kỹ năng làm việc nhóm & Kỹ năng học tập</p>
+            <p class="mt-2 text-blue-100">Mỗi nhóm chỉ có nhóm trưởng đánh giá</p>
         </div>
 
         <div class="flex border-b">
             <button onclick="switchTab('tab1', this)" class="tab-btn active flex-1 py-4 px-2 text-center text-sm md:text-base text-gray-600 hover:bg-gray-50 transition">
-                1. Sườn Bài Kỹ Năng Mềm
+                1. Sườn Bài & Tài liệu tham khảo Kỹ Năng Mềm
             </button>
             <button onclick="switchTab('tab2', this)" class="tab-btn flex-1 py-4 px-2 text-center text-sm md:text-base text-gray-600 hover:bg-gray-50 transition">
                 2. Phác Thảo Dự Án Cuối Kỳ
@@ -50,35 +51,162 @@
 
                 <div class="space-y-4">
                     <div class="border rounded p-3 shadow-sm">
-                        <h3 class="font-bold text-md mb-2">1. Cấu trúc & Hình thức (3 điểm - 20%)</h3>
-                        <div class="flex flex-col space-y-1">
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc1" value="1" required><span><b>1đ:</b> Lộn xộn, thiếu logic, thiếu phần.</span></label>
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc1" value="2"><span><b>2đ:</b> Đủ phần cơ bản, tương đối rõ.</span></label>
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc1" value="3"><span><b>3đ:</b> Cấu trúc logic, chuyên nghiệp.</span></label>
+                        <h3 class="font-bold text-md mb-4">1. Hình thức & Cấu trúc (3 điểm - 15%)</h3>
+                        <div class="flex flex-col space-y-4">
+                            
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc1" value="1" required class="mt-1">
+                                <div>
+                                    <span class="font-bold text-red-600">1đ (CẦN CỐ GẮNG):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Sai cấu trúc, lạc đề.</li>
+                                        <li>Lỗi chính tả, định dạng cẩu thả, chắp vá nội dung.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc1" value="2" class="mt-1">
+                                <div>
+                                    <span class="font-bold text-yellow-600">2đ (KHÁ):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Cấu trúc cơ bản đúng nhưng đôi chỗ sắp xếp chưa logic.</li>
+                                        <li>Văn phong còn mang tính kể lể.</li>
+                                        <li>Mắc một vài lỗi định dạng.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc1" value="3" class="mt-1">
+                                <div>
+                                    <span class="font-bold text-green-600">3đ (TỐT - XUẤT SẮC):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Tuân thủ tuyệt đối cấu trúc (Không có mục Lý do chọn đề tài).</li>
+                                        <li>Văn phong học thuật, logic chặt chẽ.</li>
+                                        <li>Không mắc lỗi chính tả, căn lề chuẩn.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
                         </div>
                     </div>
                     <div class="border rounded p-3 shadow-sm">
-                        <h3 class="font-bold text-md mb-2">2. Độ sâu của Lý thuyết (3 điểm-50%)</h3>
-                        <div class="flex flex-col space-y-1">
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc2" value="1" required><span><b>1đ:</b> Chung chung, không có mô hình.</span></label>
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc2" value="2"><span><b>2đ:</b> Có lý thuyết nhưng chưa sâu.</span></label>
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc2" value="3"><span><b>3đ:</b> Phân tích sâu, có mô hình dễ hiểu.</span></label>
+                        <h3 class="font-bold text-md mb-4">2. Chiều sâu Cơ sở Lý luận (3 điểm - 40%)</h3>
+                        <div class="flex flex-col space-y-4">
+                            
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc2" value="1" required class="mt-1">
+                                <div>
+                                    <span class="font-bold text-red-600">1đ (CẦN CỐ GẮNG):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Chỉ sao chép định nghĩa cơ bản trên mạng.</li>
+                                        <li>Không chỉ ra được bất kỳ mô hình lý thuyết (SMART, Pareto, Pomodoro...) hay cơ sở khoa học nào.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc2" value="2" class="mt-1">
+                                <div>
+                                    <span class="font-bold text-yellow-600">2đ (KHÁ):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Có trình bày định nghĩa và các mô hình nhưng chỉ dừng ở mức độ liệt kê bề mặt.</li>
+                                        <li>Phân tích ưu/nhược điểm còn sơ sài, chung chung.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc2" value="3" class="mt-1">
+                                <div>
+                                    <span class="font-bold text-green-600">3đ (TỐT - XUẤT SẮC):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Khai thác được nguồn gốc, cơ sở khoa học/tâm lý học của kỹ năng.</li>
+                                        <li>Trình bày sâu sắc cơ chế và cách vận hành của các mô hình nền tảng.</li>
+                                        <li>Có sự phân tích rõ ràng ưu/nhược điểm của từng lý thuyết.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
                         </div>
                     </div>
                     <div class="border rounded p-3 shadow-sm">
-                        <h3 class="font-bold text-md mb-2">3. Tính ứng dụng thực tế (3 điểm-20%)</h3>
-                        <div class="flex flex-col space-y-1">
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc3" value="1" required><span><b>1đ:</b> Lý thuyết suông, thiếu tình huống.</span></label>
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc3" value="2"><span><b>2đ:</b> Có case study nhưng rập khuôn.</span></label>
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc3" value="3"><span><b>3đ:</b> Tình huống thực tế, dễ áp dụng.</span></label>
+                        <h3 class="font-bold text-md mb-4">3. Tư duy Phân tích & Bàn luận (3 điểm - 25%)</h3>
+                        <div class="flex flex-col space-y-4">
+                            
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc3" value="1" required class="mt-1">
+                                <div>
+                                    <span class="font-bold text-red-600">1đ (CẦN CỐ GẮNG):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Hoàn toàn không có phần bàn luận.</li>
+                                        <li>Đưa ra nhận định chủ quan, cảm tính, không dựa trên nền tảng lý thuyết đã phân tích.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc3" value="2" class="mt-1">
+                                <div>
+                                    <span class="font-bold text-yellow-600">2đ (KHÁ):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Có so sánh nhưng chưa bật lên được sự khác biệt cốt lõi.</li>
+                                        <li>Đánh giá khả năng ứng dụng còn chung chung.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc3" value="3" class="mt-1">
+                                <div>
+                                    <span class="font-bold text-green-600">3đ (TỐT - XUẤT SẮC):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Có sự so sánh đối chiếu sắc bén giữa các phương pháp lý thuyết.</li>
+                                        <li>Đánh giá được tính khả thi và rào cản lý thuyết khi áp dụng cho sinh viên.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
                         </div>
                     </div>
                     <div class="border rounded p-3 shadow-sm">
-                        <h3 class="font-bold text-md mb-2">4. Phân công nhóm (3 điểm-10%)</h3>
-                        <div class="flex flex-col space-y-1">
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc4" value="1" required><span><b>1đ:</b> Phân công hời hợt, quá lệch.</span></label>
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc4" value="2"><span><b>2đ:</b> Có chia việc nhưng chưa đồng đều.</span></label>
-                            <label class="flex items-center space-x-2"><input type="radio" name="f1_tc4" value="3"><span><b>3đ:</b> Phân công cực kỳ chi tiết, công bằng.</span></label>
+                        <h3 class="font-bold text-md mb-4">4. Nguồn Tài liệu Tham khảo (3 điểm - 20%)</h3>
+                        <div class="flex flex-col space-y-4">
+                            
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc4" value="1" required class="mt-1">
+                                <div>
+                                    <span class="font-bold text-red-600">1đ (CẦN CỐ GẮNG):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Không có danh mục tài liệu tham khảo.</li>
+                                        <li>Đạo văn (Plagiarism) hoặc "copy-paste" nguyên văn từ Internet không trích nguồn.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc4" value="2" class="mt-1">
+                                <div>
+                                    <span class="font-bold text-yellow-600">2đ (KHÁ):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Có trích dẫn nhưng sai format.</li>
+                                        <li>Chủ yếu sử dụng các trang web phổ thông, thiếu các tài liệu chuyên ngành uy tín.</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
+                            <label class="flex items-start space-x-2 cursor-pointer">
+                                <input type="radio" name="f1_tc4" value="3" class="mt-1">
+                                <div>
+                                    <span class="font-bold text-green-600">3đ (TỐT - XUẤT SẮC):</span>
+                                    <ul class="list-disc ml-5 mt-1 text-sm text-gray-700 space-y-1">
+                                        <li>Trích dẫn đúng chuẩn (APA, IEEE...).</li>
+                                        <li>Sử dụng đa dạng các nguồn học thuật uy tín (giáo trình, sách chuyên khảo, bài báo khoa học).</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        
                         </div>
                     </div>
                 </div>
@@ -190,7 +318,7 @@
         // Tính điểm Form 1 (Tính theo trọng số: TC1 20%, TC2 50%, TC3 20%, TC4 10%)
         let f1_total = 0;
         // Mảng lưu trọng số tương ứng với 4 tiêu chí (0.2 = 20%, 0.5 = 50%, 0.1 = 10%)
-        const f1_weights = [0.2, 0.5, 0.2, 0.1]; 
+        const f1_weights = [0.15, 0.4, 0.25, 0.2]; 
 
         document.querySelectorAll('#form1 input[type="radio"]').forEach(radio => {
             radio.addEventListener('change', () => {
